@@ -55,8 +55,8 @@ jobs:
       - name: 📥 Download deps
         run: pnpm install
 
-      - name: ▶️ Run validate script
-        run: pnpm run validate
+      - name: ▶️ Run test script
+        run: pnpm run test
 
       - name: ⬆️ Upload coverage report
         uses: codecov/codecov-action@v3
