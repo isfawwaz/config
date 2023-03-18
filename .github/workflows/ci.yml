@@ -58,6 +58,9 @@ jobs:
       - name: ▶️ Run lint script
         run: pnpm lint
 
+      - name: ▶️ Update test snapshot first
+        run: pnpm run test -- --u
+
       - name: ▶️ Run test script
         run: pnpm run test -- --coverage
 
