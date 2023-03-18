@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return basename of the file 1`] = `
+{
+  "code": "module.exports = "test-file.txt";",
+}
+`;

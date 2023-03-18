@@ -1,0 +1,50 @@
+{
+  "name": "@isfawwaz/jest-config-base",
+  "version": "1.0.0",
+  "description": "Fawwaz's Jest base configuration",
+  "keywords": [
+    "jest-config",
+    "jestconfig",
+    "jest",
+    "test",
+    "preset"
+  ],
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "environments",
+    "!**/*.test.js",
+    "!**/__snapshots__"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "jest": ">=29.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.3",
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@isfawwaz/eslint-config-jest": "workspace:*",
+    "babel-jest": "^29.5.0",
+    "ci-info": "^3.8.0",
+    "jest-config": "^29.5.0",
+    "jest-serializer-path": "^0.1.15",
+    "jest-watch-typeahead": "^2.2.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "tmp-sync": "^1.1.2"
+  }
+}
