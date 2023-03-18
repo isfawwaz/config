@@ -1,1 +1,40 @@
-{}
+{
+  "name": "@isfawwaz/eslint-config-base",
+  "version": "1.0.0",
+  "description": "Fawwaz's ESLint base configuration",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ignore-pattern **/test"
+  },
+  "keywords": [
+    "eslint-config",
+    "eslintconfig",
+    "eslint",
+    "lint",
+    "linter",
+    "style",
+    "base"
+  ],
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^7.23.0"
+  },
+  "dependencies": {
+    "eslint": "^7.23.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^40.1.0"
+  }
+}
