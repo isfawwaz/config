@@ -1,0 +1,63 @@
+# Copyright from kentcdodds
+name: CI
+on:
+  push:
+    branches:
+      - '+([0-9])?(.{+([0-9]),x}).x'
+      - 'main'
+      - 'next'
+      - 'next-major'
+      - 'beta'
+      - 'alpha'
+      - '!all-contributors/**'
+  pull_request: {}
+jobs:
+  main:
+    # ignore all-contributors PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') }}
+    strategy:
+      matrix:
+        node: [16, 18]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 📥 Download deps
+        run: pnpm install
+
+      - name: ▶️ Run test script
+        run: pnpm run test
+
+      - name: ⬆️ Upload coverage report
+        uses: codecov/codecov-action@v3
+
