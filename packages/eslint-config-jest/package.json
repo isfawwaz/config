@@ -1,0 +1,38 @@
+{
+  "name": "@isfawwaz/eslint-config-jest",
+  "version": "1.0.0",
+  "description": "Fawwaz's ESLint configuration for project that use jest",
+  "keywords": [
+    "eslint-config",
+    "eslintconfig",
+    "eslint",
+    "lint",
+    "linter",
+    "style",
+    "jest-lint",
+    "jest-eslint"
+  ],
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "files": [
+    "rules"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^7.23.0"
+  },
+  "dependencies": {
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "eslint-plugin-jest": "^27.2.1"
+  }
+}
