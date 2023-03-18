@@ -1,0 +1,27 @@
+version = 1
+
+[approve]
+auto_approve_usernames = ["dependabot"]
+auto_approve_labels = ["ready", "codeball:approved"]
+
+[merge]
+automerge_label = ["automerge", "ready"]
+method = "rebase_fast_forward"
+prioritize_ready_to_merge = true
+block_on_neutral_required_check_runs = true
+priority_merge_label = "codeball:approved"
+delete_branch_on_merge = true
+
+[merge.automerge_dependencies]
+usernames = ["dependabot"]
+versions = ["minor", "patch"]
+
+[merge.message]
+body = "pull_request_body"
+body_type = "markdown"
+include_pr_number = true
+strip_html_comments = true
+
+[update]
+always = true
+ignored_usernames = ["dependabot"]
