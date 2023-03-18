@@ -23,7 +23,7 @@
     "@commitlint/config-conventional": "^17.4.4",
     "@isfawwaz/eslint-config-base": "workspace:*",
     "@isfawwaz/eslint-config-jest": "workspace:*",
-    "@isfawwaz/prettier-config": "^1.0.1",
+    "@isfawwaz/prettier-config": "workspace:*",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^7.23.0",
     "husky": "^8.0.3",

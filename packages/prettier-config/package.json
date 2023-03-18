@@ -1,0 +1,30 @@
+{
+  "name": "@isfawwaz/prettier-config",
+  "version": "1.0.2",
+  "description": "Shared prettier config for my projects",
+  "main": "index.js",
+  "keywords": [
+    "prettier"
+  ],
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "prettier": ">=2.7.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "eslint": "^7.23.0",
+    "prettier": "^2.8.4"
+  }
+}
