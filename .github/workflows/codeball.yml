@@ -1,0 +1,24 @@
+name: AIReview
+
+on:
+  pull_request:
+     types:
+     - opened
+     - reopened
+     - synchronize
+     - ready_for_review
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    name: AI Review
+    steps:
+      - name: Codeball Review
+        uses: sturdy-dev/codeball-action@v2
+        with:
+          approvePullRequests: "true"
+          labelPullRequestsWhenApproved: "true"
+          labelPullRequestsWhenReviewNeeded: "true"
+          failJobsWhenReviewNeeded: "false"
+          GITHUB_TOKEN: ${{ secrets.CEPOT_BOT_TOKEN }}
