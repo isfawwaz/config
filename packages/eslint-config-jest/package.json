@@ -16,8 +16,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "jest"
+    "lint": "eslint ."
   },
   "files": [
     "rules"
@@ -34,8 +33,5 @@
   "dependencies": {
     "@isfawwaz/eslint-config-base": "1.0.0-beta.1",
     "eslint-plugin-jest": "^27.2.1"
-  },
-  "devDependencies": {
-    "jest": "^29.5.0"
   }
 }
