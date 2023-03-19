@@ -1,6 +1,6 @@
 {
   "name": "@isfawwaz/eslint-config-babel",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Shared ESLint configuration for projects that use Babel",
   "keywords": [
     "eslint-config",
@@ -34,7 +34,7 @@
     "eslint": "^7.23.0"
   },
   "devDependencies": {
-    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@isfawwaz/eslint-config-base": "1.0.0-beta.1",
     "@moxy/babel-preset": "^3.3.2"
   },
   "dependencies": {
