@@ -10,9 +10,19 @@ runs:
         node-version: ${{ matrix.node }}
 
     - name: Install pnpm
+      if: ${{ matrix.node != 12 }}
       uses: pnpm/action-setup@v2
-      id: pnpm-install
+      id: pnpm-install-7
       with:
+        version: 7
+        run_install: false
+
+    - name: Install pnpm
+      if: ${{matrix.node == 12}}
+      uses: pnpm/action-setup@v2
+      id: pnpm-install-6
+      with:
+        version: 6
         run_install: false
 
     - name: Get pnpm store directory
