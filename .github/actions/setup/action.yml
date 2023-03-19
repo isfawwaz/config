@@ -22,7 +22,7 @@ runs:
       uses: pnpm/action-setup@v2
       id: pnpm-install-6
       with:
-        version: 6
+        version: ^6.24.1
         run_install: false
 
     - name: Get pnpm store directory
