@@ -9,6 +9,7 @@ on:
       - 'next-major'
       - 'beta'
       - 'alpha'
+      - 'pre/rc'
       - '!all-contributors/**'
   pull_request: {}
 jobs:
