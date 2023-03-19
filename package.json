@@ -16,7 +16,8 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish-packages": "tubor run build lint test && multi-semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -28,6 +29,7 @@
     "eslint": "^7.23.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
+    "multi-semantic-release": "^3.0.2",
     "prettier": "latest",
     "turbo": "latest"
   },
@@ -40,5 +42,14 @@
       "prettier --ignore-unknown --write"
     ],
     "*.js": "turbo run lint -- --ignore-pattern **/test"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "ci": false
   }
 }
