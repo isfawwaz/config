@@ -13,6 +13,11 @@
     "jest-eslint"
   ],
   "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": {
