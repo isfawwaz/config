@@ -40,7 +40,7 @@ module.exports = {
     // Disallow the use of eval()-like methods
     'no-implied-eval': 'error',
     // Disallow this keywords outside of classes or class-like objects
-    'no-invalid-this': 'error',
+    'no-invalid-this': ['error', { capIsConstructor: false }],
     // Disallow usage of __iterator__ property
     'no-iterator': 'error',
     // Disallow labeled statements
@@ -72,7 +72,7 @@ module.exports = {
       },
     ],
     // Disallow the use of `alert`, `confirm`, and `prompt`
-    'no-alert': 'error',
+    'no-alert': 'off',
     // Disallow assignment operators in return statements
     'no-return-assign': 'error',
     // Disallow unnecessary return await

@@ -14,7 +14,11 @@
   let foo;
 
   if (Math.random() > 0.5) foo = 'foo';
-  // Good
+}
+// Good
+{
+  let foo;
+
   if (Math.random() > 0.5) {
     foo = 'bar';
   }
@@ -108,6 +112,18 @@
       }
 
       arguments.callee(n - 1);
+    },
+  };
+}
+// Good
+{
+  const x = {
+    foo: function foo(n) {
+      if (n <= 0) {
+        return;
+      }
+
+      foo(n - 1);
     },
   };
 }
@@ -264,12 +280,8 @@ setTimeout(() => 'foo', 1000);
 // ---------------------------------------------------------------------
 // Bad
 {
-  const x = () => {
-    function foo() {
-      this.a = 'bar';
-    }
-
-    foo();
+  const foo = () => {
+    this.a = 0;
   };
 }
 
@@ -390,13 +402,6 @@ setTimeout(() => 'foo', 1000);
   });
 }
 
-// `no-alert` - disallow the use of `alert`, `confirm`, and `prompt`
-// ---------------------------------------------------------------------
-// Bad
-alert('foo');
-confirm('foo?');
-prompt('foo', 'bar');
-
 // `no-return-assign` - disallow assignment operators in return statements
 // ---------------------------------------------------------------------
 // Bad
@@ -435,7 +440,9 @@ prompt('foo', 'bar');
 // Good
 {
   const foo = async () => {
-    await Promise.resolve();
+    const a = await Promise.resolve();
+
+    return a;
   };
 }
 
@@ -472,7 +479,9 @@ prompt('foo', 'bar');
 {
   const a = 2;
 
-  if ((a === 1, a === 2)) {
+  const b = () => {};
+
+  if ((a === 2, b())) {
     // Do something
   }
 }
@@ -641,7 +650,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
 // Bad
 {
   const x = (function () {
-    return 1;
+    return { y: 1 };
   })();
 }
 // Good
