@@ -115,13 +115,15 @@ module.exports = {
 
 <details>
   <summary>React library tsconfig</summary>
-  ```json
-  {
-    "extends": "@isfawwaz/tsconfig/react-library.json",
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
-  }
-  ```
+
+```json
+{
+  "extends": "@isfawwaz/tsconfig/react-library.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+```
+
 </details>
 
 ## Special Thanks
