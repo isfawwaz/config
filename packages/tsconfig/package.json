@@ -1,9 +1,21 @@
 {
   "name": "@isfawwaz/tsconfig",
   "version": "1.0.0-beta.1",
+  "description": "Shared tsconfig for my projects",
   "files": [
     "base.json",
     "nextjs.json",
     "react-library.json"
-  ]
+  ],
+  "keywords": [
+    "typescript",
+    "tsconfig"
+  ],
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "license": "MIT"
 }
