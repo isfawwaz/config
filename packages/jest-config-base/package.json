@@ -27,6 +27,9 @@
     "lint": "eslint .",
     "test": "jest"
   },
+  "engines": {
+    "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+  },
   "peerDependencies": {
     "jest": ">=29.5.0"
   },
