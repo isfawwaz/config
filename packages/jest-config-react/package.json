@@ -1,0 +1,44 @@
+{
+  "name": "@isfawwaz/jest-config-react",
+  "version": "1.0.0",
+  "description": "Fawwaz's Jest react configuration with testing library",
+  "keywords": [
+    "jest-config",
+    "jestconfig",
+    "jest",
+    "test",
+    "preset",
+    "react"
+  ],
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "jest": ">=29.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@isfawwaz/eslint-config-jest": "workspace:*",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "tmp-sync": "^1.1.2"
+  },
+  "dependencies": {
+    "@isfawwaz/jest-config-base": "workspace:*",
+    "@testing-library/jest-dom": "^5.16.5",
+    "identity-obj-proxy": "^3.0.0",
+    "mime": "^3.0.0"
+  }
+}

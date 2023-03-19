@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Library should match snapshot 1`] = `
+{
+  "setupFilesAfterEnv": [
+    "foo",
+    "<HOME_DIR>/Programming/web/self-dev/personal-config/node_modules/.pnpm/@testing-library+jest-dom@5.16.5/node_modules/@testing-library/jest-dom/extend-expect.js",
+  ],
+  "testEnvironment": "jsdom",
+}
+`;
