@@ -1,6 +1,6 @@
 {
   "name": "@isfawwaz/eslint-config-base",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Fawwaz's ESLint base configuration",
   "main": "index.js",
   "scripts": {
