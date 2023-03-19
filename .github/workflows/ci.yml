@@ -26,9 +26,6 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
-      - name: ⎔ Setup node
-        uses: ./.github/actions/setup
-
       - name: ▶️ Run lint & test
         uses: ./.github/actions/lint_test
 
@@ -51,7 +48,7 @@ jobs:
       - name: ⎔ Setup node
         uses: ./.github/actions/setup
 
-      - name: 🚀 release
+      - name: 🚀 Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: 'isfawwaz'

@@ -64,7 +64,7 @@
       [
         "@semantic-release/commit-analyzer",
         {
-          "preset": "eslint",
+          "preset": "conventionalcommits",
           "parserOpts": {
             "noteKeywords": [
               "BREAKING CHANGE",
@@ -102,7 +102,7 @@
       [
         "@semantic-release/release-notes-generator",
         {
-          "preset": "eslint",
+          "preset": "conventionalcommits",
           "parserOpts": {
             "noteKeywords": [
               "BREAKING CHANGE",
