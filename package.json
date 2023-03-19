@@ -17,7 +17,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
     "prepare": "husky install",
-    "publish-packages": "tubor run build lint test && multi-semantic-release"
+    "publish-packages": "turbo run build lint test && multi-semantic-release",
+    "publish-packages:dry": "turbo run build lint test && multi-semantic-release --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -44,6 +45,20 @@
     "*.js": "turbo run lint -- --ignore-pattern **/test"
   },
   "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
