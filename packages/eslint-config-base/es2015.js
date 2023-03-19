@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['import', 'jsdoc'],
+  plugins: ['import', 'jsdoc', 'prettier'],
   extends: [
     './lib/rules/best-practices',
     './lib/rules/errors',
@@ -10,6 +10,7 @@ module.exports = {
     './lib/rules/strict',
     './lib/rules/style',
     './lib/rules/variables',
+    './lib/rules/prettier',
   ].map(require.resolve),
   env: {
     es6: true,
