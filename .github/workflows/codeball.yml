@@ -2,11 +2,11 @@ name: AIReview
 
 on:
   pull_request:
-     types:
-     - opened
-     - reopened
-     - synchronize
-     - ready_for_review
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
 
 jobs:
   review:
@@ -17,8 +17,9 @@ jobs:
       - name: Codeball Review
         uses: sturdy-dev/codeball-action@v2
         with:
-          approvePullRequests: "true"
-          labelPullRequestsWhenApproved: "true"
-          labelPullRequestsWhenReviewNeeded: "true"
-          failJobsWhenReviewNeeded: "false"
+          approvePullRequests: 'true'
+          labelPullRequestsWhenApproved: 'true'
+          labelPullRequestsWhenReviewNeeded: 'true'
+          failJobsWhenReviewNeeded: 'false'
           GITHUB_TOKEN: ${{ secrets.CEPOT_BOT_TOKEN }}
+          approveThreshold: '0.700'
