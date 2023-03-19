@@ -51,10 +51,12 @@ importers:
       eslint: ^7.23.0
       eslint-plugin-import: ^2.27.5
       eslint-plugin-jsdoc: ^40.1.0
+      eslint-plugin-prettier: ^4.2.1
     dependencies:
       eslint: 7.32.0
       eslint-plugin-import: 2.27.5_eslint@7.32.0
       eslint-plugin-jsdoc: 40.1.0_eslint@7.32.0
+      eslint-plugin-prettier: 4.2.1_eslint@7.32.0
 
   packages/eslint-config-custom:
     specifiers:
@@ -106,6 +108,12 @@ importers:
       jest: 29.5.0
       tmp-sync: 1.1.2
 
+  packages/jest-config-testing-library:
+    specifiers:
+      '@testing-library/jest-dom': ^5.16.5
+    dependencies:
+      '@testing-library/jest-dom': 5.16.5
+
   packages/prettier-config:
     specifiers:
       '@isfawwaz/eslint-config-base': 1.0.0-beta.1
@@ -120,6 +128,13 @@ importers:
     specifiers: {}
 
 packages:
+  /@adobe/css-tools/4.2.0:
+    resolution:
+      {
+        integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==,
+      }
+    dev: false
+
   /@ampproject/remapping/2.2.0:
     resolution:
       {
@@ -2872,6 +2887,24 @@ packages:
     dependencies:
       '@sinonjs/commons': 2.0.0
 
+  /@testing-library/jest-dom/5.16.5:
+    resolution:
+      {
+        integrity: sha512-N5ixQ2qKpi5OLYfwQmUb/5mSV9LneAcaUfp32pn4yCnpb8r/Yz0pXFPck21dIicKmi+ta5WRAknkZCfA8refMA==,
+      }
+    engines: { node: '>=8', npm: '>=6', yarn: '>=1' }
+    dependencies:
+      '@adobe/css-tools': 4.2.0
+      '@babel/runtime': 7.21.0
+      '@types/testing-library__jest-dom': 5.14.5
+      aria-query: 5.1.3
+      chalk: 3.0.0
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.5.16
+      lodash: 4.17.21
+      redent: 3.0.0
+    dev: false
+
   /@tootallnate/once/2.0.0:
     resolution:
       {
@@ -2975,6 +3008,16 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
 
+  /@types/jest/29.5.0:
+    resolution:
+      {
+        integrity: sha512-3Emr5VOl/aoBwnWcH/EFQvlSAmjV+XtV9GGu5mwdYew5vhQh0IUZx/60x0TzHDu09Bi7HMx10t/namdJw5QIcg==,
+      }
+    dependencies:
+      expect: 29.5.0
+      pretty-format: 29.5.0
+    dev: false
+
   /@types/json-schema/7.0.11:
     resolution:
       {
@@ -3048,6 +3091,15 @@ packages:
       {
         integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==,
       }
+
+  /@types/testing-library__jest-dom/5.14.5:
+    resolution:
+      {
+        integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==,
+      }
+    dependencies:
+      '@types/jest': 29.5.0
+    dev: false
 
   /@types/yargs-parser/21.0.0:
     resolution:
@@ -3835,6 +3887,17 @@ packages:
       escape-string-regexp: 1.0.5
       supports-color: 5.5.0
 
+  /chalk/3.0.0:
+    resolution:
+      {
+        integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==,
+      }
+    engines: { node: '>=8' }
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: false
+
   /chalk/4.1.2:
     resolution:
       {
@@ -4213,6 +4276,13 @@ packages:
     engines: { node: '>=8' }
     dev: true
 
+  /css.escape/1.5.1:
+    resolution:
+      {
+        integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==,
+      }
+    dev: false
+
   /damerau-levenshtein/1.0.8:
     resolution:
       {
@@ -4425,6 +4495,13 @@ packages:
     engines: { node: '>=6.0.0' }
     dependencies:
       esutils: 2.0.3
+
+  /dom-accessibility-api/0.5.16:
+    resolution:
+      {
+        integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==,
+      }
+    dev: false
 
   /dot-prop/5.3.0:
     resolution:
@@ -4928,6 +5005,24 @@ packages:
       semver: 6.3.0
     dev: false
 
+  /eslint-plugin-prettier/4.2.1_eslint@7.32.0:
+    resolution:
+      {
+        integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==,
+      }
+    engines: { node: '>=12.0.0' }
+    peerDependencies:
+      eslint: '>=7.28.0'
+      eslint-config-prettier: '*'
+      prettier: '>=2.0.0'
+    peerDependenciesMeta:
+      eslint-config-prettier:
+        optional: true
+    dependencies:
+      eslint: 7.32.0
+      prettier-linter-helpers: 1.0.0
+    dev: false
+
   /eslint-plugin-react-hooks/4.6.0_eslint@7.32.0:
     resolution:
       {
@@ -5213,6 +5308,13 @@ packages:
       {
         integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==,
       }
+
+  /fast-diff/1.2.0:
+    resolution:
+      {
+        integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==,
+      }
+    dev: false
 
   /fast-glob/3.2.12:
     resolution:
@@ -5915,7 +6017,6 @@ packages:
         integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==,
       }
     engines: { node: '>=8' }
-    dev: true
 
   /inflight/1.0.6:
     resolution:
@@ -7322,7 +7423,6 @@ packages:
       {
         integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==,
       }
-    dev: true
 
   /log-update/4.0.0:
     resolution:
@@ -7504,7 +7604,6 @@ packages:
         integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==,
       }
     engines: { node: '>=4' }
-    dev: true
 
   /minimatch/3.1.2:
     resolution:
@@ -8248,6 +8347,16 @@ packages:
       }
     engines: { node: '>= 0.8.0' }
 
+  /prettier-linter-helpers/1.0.0:
+    resolution:
+      {
+        integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==,
+      }
+    engines: { node: '>=6.0.0' }
+    dependencies:
+      fast-diff: 1.2.0
+    dev: false
+
   /prettier/2.8.4:
     resolution:
       {
@@ -8463,7 +8572,6 @@ packages:
     dependencies:
       indent-string: 4.0.0
       strip-indent: 3.0.0
-    dev: true
 
   /redeyed/2.1.1:
     resolution:
@@ -9243,7 +9351,6 @@ packages:
     engines: { node: '>=8' }
     dependencies:
       min-indent: 1.0.1
-    dev: true
 
   /strip-json-comments/2.0.1:
     resolution:
