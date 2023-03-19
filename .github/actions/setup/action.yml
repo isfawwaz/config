@@ -10,17 +10,17 @@ runs:
         node-version: ${{ matrix.node }}
 
     - name: Install pnpm
+      if: ${{ matrix.node != 12 }}
       uses: pnpm/action-setup@v2
       id: pnpm-install
-      if: matrix.node != 12
       with:
         version: 7
         run_install: false
 
     - name: Install pnpm
+      if: ${{ matrix.node == 12 }}
       uses: pnpm/action-setup@v2
       id: pnpm-install
-      if: matrix.node == 12
       with:
         version: 6
         run_install: false
