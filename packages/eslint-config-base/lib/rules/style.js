@@ -77,6 +77,7 @@ module.exports = {
       2,
       {
         ignoredNodes: ['TemplateLiteral > *'],
+        SwitchCase: 1,
       },
     ],
     // Enforce the consistent use of either double or single quotes in JSX attributes
@@ -157,7 +158,15 @@ module.exports = {
     // Require or disallow newlines around variable declarations
     'one-var-declaration-per-line': ['error', 'always'],
     // Enforce consistent linebreak style for operators
-    'operator-linebreak': ['error', 'after'],
+    'operator-linebreak': [
+      'error',
+      'before',
+      {
+        overrides: {
+          '=': 'after',
+        },
+      },
+    ],
     // Require or disallow padding within blocks
     'padded-blocks': ['error', 'never'],
     // Require newlines in certain situations
