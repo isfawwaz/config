@@ -14,7 +14,7 @@ on:
 jobs:
   main:
     # ignore all-contributors PRs
-    if: ${{ !contains(github.head_ref, 'all-contributors') }}
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.event.head_commit.message, 'docs:', 'docs(', 'build:', 'build(') }}
     strategy:
       matrix:
         node: [16, 18]
