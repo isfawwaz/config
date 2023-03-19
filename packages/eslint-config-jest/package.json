@@ -1,6 +1,6 @@
 {
   "name": "@isfawwaz/eslint-config-jest",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Fawwaz's ESLint configuration for project that use jest",
   "keywords": [
     "eslint-config",
@@ -32,7 +32,7 @@
     "eslint": "^7.23.0"
   },
   "dependencies": {
-    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@isfawwaz/eslint-config-base": "1.0.0-beta.1",
     "eslint-plugin-jest": "^27.2.1"
   }
 }
