@@ -1,3 +1,3 @@
-const { compose, baseConfig } = require('.');
+const { extendConfig } = require('.');
 
-module.exports = compose(baseConfig('node'));
+module.exports = extendConfig('node');

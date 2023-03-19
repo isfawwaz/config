@@ -1,4 +1,4 @@
 const baseConfig = require('./lib/base-config');
-const compose = require('./lib/compose');
+const extendConfig = require('./lib/extend-config');
 
-module.exports = { baseConfig, compose };
+module.exports = { baseConfig, extendConfig };
