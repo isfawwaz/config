@@ -8,6 +8,8 @@ importers:
       '@isfawwaz/eslint-config-base': workspace:*
       '@isfawwaz/eslint-config-jest': workspace:*
       '@isfawwaz/prettier-config': workspace:*
+      '@semantic-release/changelog': ^6.0.2
+      '@semantic-release/git': ^10.0.1
       conventional-changelog-conventionalcommits: ^5.0.0
       eslint: ^7.23.0
       husky: ^8.0.3
@@ -21,6 +23,8 @@ importers:
       '@isfawwaz/eslint-config-base': link:packages/eslint-config-base
       '@isfawwaz/eslint-config-jest': link:packages/eslint-config-jest
       '@isfawwaz/prettier-config': link:packages/prettier-config
+      '@semantic-release/changelog': 6.0.2
+      '@semantic-release/git': 10.0.1
       conventional-changelog-conventionalcommits: 5.0.0
       eslint: 7.32.0
       husky: 8.0.3
@@ -2701,6 +2705,21 @@ packages:
       }
     dev: false
 
+  /@semantic-release/changelog/6.0.2:
+    resolution:
+      {
+        integrity: sha512-jHqfTkoPbDEOAgAP18mGP53IxeMwxTISN+GwTRy9uLu58UjARoZU8ScCgWGeO2WPkEsm57H8AkyY02W2ntIlIw==,
+      }
+    engines: { node: '>=14.17' }
+    peerDependencies:
+      semantic-release: '>=18.0.0'
+    dependencies:
+      '@semantic-release/error': 3.0.0
+      aggregate-error: 3.1.0
+      fs-extra: 11.1.0
+      lodash: 4.17.21
+    dev: true
+
   /@semantic-release/commit-analyzer/9.0.2_semantic-release@19.0.5:
     resolution:
       {
@@ -2728,6 +2747,27 @@ packages:
         integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==,
       }
     engines: { node: '>=14.17' }
+    dev: true
+
+  /@semantic-release/git/10.0.1:
+    resolution:
+      {
+        integrity: sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==,
+      }
+    engines: { node: '>=14.17' }
+    peerDependencies:
+      semantic-release: '>=18.0.0'
+    dependencies:
+      '@semantic-release/error': 3.0.0
+      aggregate-error: 3.1.0
+      debug: 4.3.4
+      dir-glob: 3.0.1
+      execa: 5.1.1
+      lodash: 4.17.21
+      micromatch: 4.0.5
+      p-reduce: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@semantic-release/github/8.0.7_semantic-release@19.0.5:

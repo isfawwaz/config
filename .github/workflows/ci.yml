@@ -29,14 +29,8 @@ jobs:
       - name: ⎔ Setup node
         uses: ./.github/actions/setup
 
-      - name: ▶️ Run lint script
-        run: pnpm lint
-
-      - name: ▶️ Update test snapshot first
-        run: pnpm run test -- --u
-
-      - name: ▶️ Run test script
-        run: pnpm run test -- --coverage
+      - name: ▶️ Run lint & test
+        uses: ./.github/actions/lint_test
 
       - name: ⬆️ Upload coverage report
         uses: codecov/codecov-action@v3
