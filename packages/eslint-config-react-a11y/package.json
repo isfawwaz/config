@@ -1,0 +1,46 @@
+{
+  "name": "@isfawwaz/eslint-config-react-a11y",
+  "version": "1.0.0",
+  "description": "Fawwaz's ESLint configuration for project that use React",
+  "keywords": [
+    "eslint-config",
+    "eslintconfig",
+    "eslint",
+    "lint",
+    "linter",
+    "style",
+    "react-lint",
+    "react-eslint",
+    "jsx",
+    "a11y",
+    "jsx-a11y"
+  ],
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "rules"
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^7.23.0"
+  },
+  "dependencies": {
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@isfawwaz/eslint-config-react": "workspace:*",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
+  }
+}
