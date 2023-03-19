@@ -17,5 +17,8 @@
     "url": "https://github.com/isfawwaz/config"
   },
   "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
