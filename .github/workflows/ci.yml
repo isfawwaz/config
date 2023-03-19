@@ -37,7 +37,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     if: ${{ github.repository == 'isfawwaz/config' &&
-      contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref) &&
+      contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha,refs/heads/pre/rc', github.ref) &&
       github.event_name == 'push' }}
     strategy:
       matrix:
