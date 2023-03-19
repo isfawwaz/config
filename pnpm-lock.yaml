@@ -37,7 +37,7 @@ importers:
     specifiers:
       '@babel/eslint-parser': ^7.21.3
       '@babel/eslint-plugin': ^7.19.1
-      '@isfawwaz/eslint-config-base': workspace:*
+      '@isfawwaz/eslint-config-base': 1.0.0-beta.1
       '@moxy/babel-preset': ^3.3.2
     dependencies:
       '@babel/eslint-parser': 7.21.3
@@ -75,7 +75,7 @@ importers:
 
   packages/eslint-config-jest:
     specifiers:
-      '@isfawwaz/eslint-config-base': workspace:*
+      '@isfawwaz/eslint-config-base': 1.0.0-beta.1
       eslint-plugin-jest: ^27.2.1
     dependencies:
       '@isfawwaz/eslint-config-base': link:../eslint-config-base
@@ -84,8 +84,8 @@ importers:
   packages/jest-config-base:
     specifiers:
       '@babel/core': ^7.21.3
-      '@isfawwaz/eslint-config-base': workspace:*
-      '@isfawwaz/eslint-config-jest': workspace:*
+      '@isfawwaz/eslint-config-base': 1.0.0-beta.1
+      '@isfawwaz/eslint-config-jest': 1.0.0-beta.1
       babel-jest: ^29.5.0
       ci-info: ^3.8.0
       jest: ^29.5.0
@@ -108,7 +108,7 @@ importers:
 
   packages/prettier-config:
     specifiers:
-      '@isfawwaz/eslint-config-base': workspace:*
+      '@isfawwaz/eslint-config-base': 1.0.0-beta.1
       eslint: ^7.23.0
       prettier: ^2.8.4
     devDependencies:
