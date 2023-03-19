@@ -79,9 +79,14 @@ importers:
     specifiers:
       '@isfawwaz/eslint-config-base': 1.0.0-beta.1
       eslint-plugin-jest: ^27.2.1
+      jest: ^29.5.0
+      semver: ^7.3.8
     dependencies:
       '@isfawwaz/eslint-config-base': link:../eslint-config-base
-      eslint-plugin-jest: 27.2.1
+      eslint-plugin-jest: 27.2.1_jest@29.5.0
+    devDependencies:
+      jest: 29.5.0
+      semver: 7.3.8
 
   packages/jest-config-base:
     specifiers:
@@ -4934,7 +4939,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jest/27.2.1:
+  /eslint-plugin-jest/27.2.1_jest@29.5.0:
     resolution:
       {
         integrity: sha512-l067Uxx7ZT8cO9NJuf+eJHvt6bqJyz2Z29wykyEdz/OtmcELQl2MQGQLX8J94O1cSJWAwUSEvCjwjA7KEK3Hmg==,
@@ -4951,6 +4956,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/utils': 5.55.0
+      jest: 29.5.0
     transitivePeerDependencies:
       - supports-color
       - typescript
