@@ -11,7 +11,7 @@ runs:
 
     - name: Install pnpm
       uses: pnpm/action-setup@v2
-      id: pnpm-install --no-frozen-lockfile
+      id: pnpm-install
       with:
         version: 7
         run_install: false
@@ -32,4 +32,4 @@ runs:
 
     - name: 📥 Download deps
       shell: bash
-      run: pnpm install
+      run: pnpm install --no-frozen-lockfile
