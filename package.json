@@ -124,7 +124,19 @@
       ],
       "@semantic-release/changelog",
       "@semantic-release/npm",
-      "@semantic-release/github",
+      [
+        "@semantic-release/github",
+        {
+          "labels": [
+            "semantic-release",
+            "automerge"
+          ],
+          "releasedLabels": [
+            "semantic-release",
+            "automerge"
+          ]
+        }
+      ],
       [
         "@semantic-release/git",
         {
