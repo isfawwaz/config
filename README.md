@@ -1,73 +1,159 @@
-# Turborepo starter
+# Personal Config
 
-This is an official pnpm starter turborepo.
+<!-- prettier-ignore-start -->
+[![Build Status][build-badge]][build]
+[![codecov](https://codecov.io/gh/isfawwaz/config/branch/main/graph/badge.svg?token=J2I8dIcRJD)](https://codecov.io/gh/isfawwaz/config)
+[![MIT License][license-badge]][license]
+[![PRs Welcome][prs-badge]][prs]
+[![Code of Conduct][coc-badge]][coc]
+<!-- prettier-ignore-end -->
 
-## What's inside?
+ESLint, Jest, TSconfig and Prettier rules for all of my personal projects. Feel free to use these conventions :-)
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+## How it works
 
-### Apps and Packages
+This repository contains set of _ESLint_, _Jest_, _Typescript_ & _Prettier_ configurations to be used in JavaScript and Typescript projects.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+### ESLint
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+For _ESLint_ there are two set configurations to be used to:
 
-### Utilities
+- the **base** configuration, which defines the common ESLint rules, the ECMAScript version and the module system.
+- the **enhancers**, which contain specific settings for different frameworks, like React or Vue.
 
-This turborepo has some additional tools already setup for you:
+By using one or more of these packages, you can enforce the desired code styles for each type of project.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+For more information on how to use each package and their specific configurations, please read the package's README by following the links below. You may also check the examples listed in [Typical Configs](#typical-configs) to see how the packages may be combined for the most common scenarios.
 
-### Build
+For more information on how to use each package and their specific configurations, please read the package's README by following the links below. You may also check the examples listed in [Typical Configs](#typical-configs) to see how the packages may be combined for the most common scenarios.
 
-To build all apps and packages, run the following command:
+#### Base config
 
+The base config is published as [`@isfawwaz/eslint-config-base`](packages/eslint-config-base), check out its README to know how to use it.
+
+#### Enhancer configs
+
+There are several **enhancer** packages, which are intended to be used in conjunction with the **base** configuration:
+
+- [`@isfawwaz/eslint-config-babel`](packages/eslint-config-babel/) - If you are going to use [Babel](https://babeljs.io/) to transpile source code.
+- [`@isfawwaz/eslint-config-jest`](packages/eslint-config-jest/) - If you are going to use [Jest](https://facebook.github.io/jest/) to develop tests.
+
+### Jest
+
+For _Jest_ there are same with _ESLint_ which have two set configurations to be used to, but unfortunely on current version only **base** configuration available.
+
+#### Base config
+
+The base config is published as [`@isfawwaz/jest-config-base`](packages/jest-config-base), check out its README to know how to use it.
+
+### Typescript Config
+
+For _Typescript_ config there are two set configuration to be used to:
+
+- [`@isfawwaz/tsconfig/react-library.json](packages/tsconfig/react-library.json) - If you want to detect accessibility issues on your library project which based on [React](https://reactjs.org/).
+- [`@isfawwaz/tsconfig/nextjs.json](packages/tsconfig/react-library.json) - If you want to detect accessibility issues in web projects based on [NextJS](https://nextjs.org/).
+
+### Prettier
+
+For _Prettier_ config file, that only one config that can be used. check it out [`README.md`](packages/prettier-config) to know how to use it.
+
+## Typical configs
+
+<details>
+  <summary>Standard JavaScript project</summary>
+
+```json
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "@isfawwaz/eslint-config-base/esm",
+    "@isfawwaz/eslint-config-babel",
+    "@isfawwaz/eslint-config-jest"
+  ]
+}
 ```
-cd my-turborepo
-pnpm run build
+
+ℹ️ If your project is isomorphic / universal, you may want to enable the `node` environment as well.
+
+</details>
+
+<details>
+  <summary>Node.js project</summary>
+
+```json
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": ["@isfawwaz/eslint-config-base/cjs/es2019", "@isfawwaz/eslint-config-jest"]
+}
 ```
 
-### Develop
+⚠️ In the above example, we choose the `es2019` version instead of the latest ECMAScript version because there's no Babel compilation and we are restricted to what the Node.js runtime supports. Please check [node.green](https://node.green/) and select the most appropriate ECMAScript version based on the Node.js version you are targeting.
 
-To develop all apps and packages, run the following command:
+</details>
 
-```
-cd my-turborepo
-pnpm run dev
-```
+<details>
+  <summary>Extend prettier config</summary>
 
-### Remote Caching
+> Note: This method only when you need to extend the configuration, import the file in a .prettierrc.js file and export the modifications, e.g:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+```javascript
+// .prettierrc.js
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-pnpm dlx turbo login
+module.exports = {
+  ...require('@isfawwaz/prettier-config'),
+  singleQuote: false,
+};
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+</details>
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+<details>
+  <summary>React library tsconfig</summary>
+  ```json
+  {
+    "extends": "@isfawwaz/tsconfig/react-library.json",
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
+  }
+  ```
+</details>
 
-```
-pnpm dlx turbo link
-```
+## Special Thanks
 
-## Useful Links
+Thanks to [@moxy/eslint-config](https://github.com/moxystudio/eslint-config/blob/master/README.md?plain=1) for such amazing inspiration for me to create my version of config.
 
-Learn more about the power of Turborepo:
+## License
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+[MIT License](http://opensource.org/licenses/MIT)
+
+<!-- prettier-ignore-start -->
+[build-badge]: https://img.shields.io/github/actions/workflow/status/isfawwaz/config/ci.yml?branch=main
+[version-badge]: https://img.shields.io/npm/v/isfawwaz/config.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dm/isfawwaz/config.svg?style=flat-square
+[license-badge]: https://img.shields.io/npm/l/config.svg?style=flat-square
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[all-contributors-badge]: https://img.shields.io/github/all-contributors/isfawwaz/config?color=orange&style=flat-square
+
+[npm]: https://www.npmjs.com
+[node]: https://nodejs.org
+[build]: https://github.com/isfawwaz/eslint-config-isfawwaz/actions?query=workflow%3ACI
+[package]: https://www.npmjs.com/package/isfawwaz/config
+[npmtrends]: http://www.npmtrends.com/isfawwaz
+[license]: https://github.com/isfawwaz/config/blob/master/LICENSE
+[prs]: http://makeapullrequest.com
+[coc]: https://github.com/isfawwaz/config/blob/master/other/CODE_OF_CONDUCT.md
+[emojis]: https://github.com/all-contributors/all-contributors#emoji-key
+[all-contributors]: https://g.all-contributorsrcithub.com/all-contributors/all-contributors
+[bugs]: https://github.com/isfawwaz/config/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+sort%3Acreated-desc+label%3Abug
+[requests]: https://github.com/isfawwaz/config/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+label%3Aenhancement
+[good-first-issue]: https://github.com/isfawwaz/config/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc+label%3Aenhancement+label%3A%22good+first+issue%22
+
+[eslint]: https://github.com/eslint/eslint
+<!-- prettier-ignore-end -->
