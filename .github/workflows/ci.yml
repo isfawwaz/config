@@ -44,7 +44,7 @@ jobs:
   release:
     needs: main
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'isfawwaz/eslint-config-isfawwaz' &&
+    if: ${{ github.repository == 'isfawwaz/config' &&
       contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref) &&
       github.event_name == 'push' }}
     steps:
