@@ -1,8 +1,15 @@
-# prettier-config
+# @isfawwaz/prettier-config
 
-> Shared [Prettier](https://prettier.io) config for my projects.
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
 
-## Install
+[npm-url]: https://npmjs.org/package/@isfawwaz/prettier-config
+[npm-image]: https://img.shields.io/npm/v/@isfawwaz/prettier-config
+[downloads-image]: https://img.shields.io/npm/dm/@isfawwaz/prettier-config
+
+Shared [Prettier](https://prettier.io) config for my projects.
+
+## Installation
 
 ```bash
 npm install --save-dev @isfawwaz/prettier-config
