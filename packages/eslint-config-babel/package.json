@@ -1,0 +1,44 @@
+{
+  "name": "@isfawwaz/eslint-config-babel",
+  "version": "1.0.0",
+  "description": "Shared ESLint configuration for projects that use Babel",
+  "keywords": [
+    "eslint-config",
+    "eslintconfig",
+    "eslint",
+    "lint",
+    "linter",
+    "style",
+    "babel",
+    "babel-eslint"
+  ],
+  "author": "A. F. Fawwazulkarim <isfawwaz@gmail.com>",
+  "homepage": "https://github.com/isfawwaz/config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isfawwaz/config"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^7.23.0"
+  },
+  "devDependencies": {
+    "@isfawwaz/eslint-config-base": "workspace:*",
+    "@moxy/babel-preset": "^3.3.2"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@babel/eslint-plugin": "^7.19.1"
+  }
+}
