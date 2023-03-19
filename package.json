@@ -17,8 +17,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
     "prepare": "husky install",
-    "publish-packages": "turbo run build lint test && multi-semantic-release",
-    "publish-packages:dry": "turbo run build lint test && multi-semantic-release --dry-run"
+    "publish-packages": "turbo run build lint && turbo run test -- -u && turbo run test && multi-semantic-release",
+    "publish-packages:dry": "turbo run build lint && turbo run test -- -u && turbo run test && multi-semantic-release --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
