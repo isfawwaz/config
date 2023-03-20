@@ -37,13 +37,13 @@ importers:
     specifiers:
       '@babel/eslint-parser': ^7.21.3
       '@babel/eslint-plugin': ^7.19.1
-      '@isfawwaz/eslint-config-base': 1.0.0-beta.1
+      '@isfawwaz/eslint-config-base': workspace:*
       '@moxy/babel-preset': ^3.3.2
     dependencies:
       '@babel/eslint-parser': 7.21.3
       '@babel/eslint-plugin': 7.19.1_jcp3mviysj3sb4ihtes44pzo2e
-    devDependencies:
       '@isfawwaz/eslint-config-base': link:../eslint-config-base
+    devDependencies:
       '@moxy/babel-preset': 3.3.2
 
   packages/eslint-config-base:

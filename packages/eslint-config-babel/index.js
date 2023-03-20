@@ -1,13 +1,13 @@
 const babelRules = require('@babel/eslint-plugin').rules;
 
 const baseRules = {
-  ...require('@moxy/eslint-config-base/lib/rules/best-practices').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/errors').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/es6').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/node').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/strict').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/style').rules,
-  ...require('@moxy/eslint-config-base/lib/rules/variables').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/best-practices').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/errors').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/es6').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/node').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/strict').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/style').rules,
+  ...require('@isfawwaz/eslint-config-base/lib/rules/variables').rules,
 };
 
 const rules = Object.keys(babelRules).reduce((rules, name) => {
